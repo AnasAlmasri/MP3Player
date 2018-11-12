@@ -12,11 +12,11 @@
         android:layout_width="231dp"
         android:layout_height="236dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="232dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_music" />
@@ -25,10 +25,9 @@
         android:id="@+id/progressSeekbar"
         android:layout_width="260dp"
         android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
-        android:thumbTint="@color/blueColor"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="8dp"
         android:max="100"
         android:maxHeight="2dip"
         android:minHeight="2dip"
@@ -36,78 +35,77 @@
         android:paddingBottom="20px"
         android:progress="0"
         android:thumbOffset="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/pauseBtn"
-        app:layout_constraintEnd_toStartOf="@+id/durationTextView"
-        app:layout_constraintStart_toEndOf="@+id/progressTextView" />
+        android:thumbTint="@color/blueColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/loopBtn"
+        app:layout_constraintTop_toBottomOf="@+id/musicPlayerImageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/progressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="24dp"
         android:text="00:00"
         android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/loopBtn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/progressSeekbar" />
 
     <TextView
         android:id="@+id/durationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="24dp"
         android:text="00:00"
         android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/stopBtn"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressSeekbar" />
 
     <ImageView
         android:id="@+id/playBtn"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
         android:onClick="playBtnOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/stopBtn"
-        app:layout_constraintStart_toEndOf="@+id/loopBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/pauseBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopBtn"
         app:srcCompat="@drawable/ic_play" />
 
     <ImageView
         android:id="@+id/pauseBtn"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
         android:onClick="pauseBtnOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/stopBtn"
-        app:layout_constraintStart_toEndOf="@+id/loopBtn"
+        app:layout_constraintBottom_toTopOf="@+id/loopBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopBtn"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_pause" />
 
     <ImageView
         android:id="@+id/stopBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
         android:onClick="stopBtnOnClick"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_stop" />
 
     <ImageView
         android:id="@+id/loopBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
         android:onClick="loopBtnOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_loop_blue" />
 
     <ImageView
@@ -115,7 +113,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:onClick="loadBtnOnClick"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_load" />
 
